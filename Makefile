@@ -10,6 +10,11 @@ build: clean
 	mkdir -p build
 	GOOS=$(GOOS) GOARCH=$(GOARCH) APPNAME=$(APPNAME) ./scripts/build
 
+build-freebsd: clean
+	mkdir -p build
+	GOOS=freebsd GOARCH=amd64 APPNAME=$(APPNAME) ./scripts/build
+
+
 run: build
 	./build/${APPNAME}
 
